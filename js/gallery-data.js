@@ -38,6 +38,13 @@ window.GALLERY = {
       { file: "portrait-vic-03", name: "Vic", w: 1500, h: 2000 },
       { file: "portrait-perrine-02", name: "Perrine", w: 1333, h: 2000 },
       { file: "portrait-mathy-01", name: "Mathy", w: 1500, h: 2000 },
+      { file: "portrait-clara-rene-01", name: "Clara Rene", w: 1500, h: 2000 },
+      { file: "portrait-loft-14c-01", name: "", w: 1500, h: 2000 },
+      { file: "portrait-queen-didi-01", name: "Queen Didi", w: 1500, h: 2000 },
+      { file: "portrait-guilia-01", name: "Guilia", w: 2000, h: 1500 },
+      { file: "portrait-margot-01", name: "Margot", w: 1500, h: 2000 },
+      { file: "portrait-cass-01", name: "", w: 1500, h: 2000 },
+      { file: "portrait-niczi-01", name: "Niczi", w: 1500, h: 2000 },
     ]
   },
   nude: {
@@ -58,6 +65,12 @@ window.GALLERY = {
       { file: "nude-cardii-01", name: "Cardii", w: 2000, h: 1125 },
       { file: "nude-0c2a7184", name: "", w: 1334, h: 2000 },
       { file: "nude-guilia-01", name: "Guilia", w: 2000, h: 1500 },
+      { file: "nude-0c2a7490", name: "", w: 2000, h: 1334 },
+      { file: "nude-margot-01", name: "Margot", w: 1500, h: 2000 },
+      { file: "nude-margot-02", name: "Margot", w: 1500, h: 2000 },
+      { file: "nude-chiara-01", name: "Chiara", w: 1500, h: 2000 },
+      { file: "nude-laura-01", name: "Laura", w: 1500, h: 2000 },
+      { file: "nude-niczi-01", name: "Niczi", w: 1500, h: 2000 },
     ]
   },
   travel: {
