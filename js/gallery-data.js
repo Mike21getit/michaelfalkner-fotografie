@@ -57,7 +57,7 @@ window.GALLERY = {
       { file: "nude-aneta-02", name: "Aneta", w: 1500, h: 2000 },
       { file: "nude-cardii-01", name: "Cardii", w: 2000, h: 1125 },
       { file: "nude-0c2a7184", name: "", w: 1334, h: 2000 },
-      { file: "nude-frontina-01", name: "", w: 2000, h: 1500 },
+      { file: "nude-guilia-01", name: "Guilia", w: 2000, h: 1500 },
     ]
   },
   travel: {
