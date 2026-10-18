@@ -22,6 +22,7 @@ window.GALLERY = {
     title: "Portrait",
     altPrefix: "Porträt",
     images: [
+      { file: "portrait-claudio-01", name: "Claudio", w: 2000, h: 1500 },
       { file: "portrait-clara-rene-02", name: "Clara Rene", w: 1599, h: 2000 },
       { file: "portrait-img-01", name: "", w: 1334, h: 2000 },
       { file: "portrait-jorina-01", name: "Jorina", w: 1500, h: 2000 },
