@@ -12,7 +12,7 @@
  *
  * Das erste Bild einer Kategorie ist automatisch das Teaser-Bild.
  *
- * TRAVEL & LOCATION: Diese Kategorien sind vorbereitet, aber noch leer.
+ * TRAVEL: Diese Kategorie ist vorbereitet, aber noch leer (LOCATION ist aktiv).
  * Sobald in "images" mindestens ein Bild steht, erscheinen Teaser,
  * Navigationspunkt und Portfolio-Bereich automatisch – sonst bleiben
  * sie ausgeblendet. Am HTML muss dafür nichts geändert werden.
@@ -66,10 +66,25 @@ window.GALLERY = {
     ]
   },
   location: {
-    title: "Location",
+    title: "On Location",
     altPrefix: "Location-Shooting",
     images: [
-      // { file: "location-beispiel-01", name: "", w: 2000, h: 1333 },
+      { file: "location-0c2a7439", name: "", w: 2000, h: 1334 },
+      { file: "location-0c2a7509", name: "", w: 1334, h: 2000 },
+      { file: "location-la-petite-douce-146", name: "", w: 1500, h: 2000 },
+      { file: "location-eugenia-0565", name: "Eugenia", w: 1334, h: 2000 },
+      { file: "location-bourdonant-0503", name: "", w: 2000, h: 1500 },
+      { file: "location-queen-didi-0008", name: "Queen Didi", w: 1500, h: 2000 },
+      { file: "location-queen-didi-0208", name: "Queen Didi", w: 1500, h: 2000 },
+      { file: "location-albert-rolex-351", name: "", w: 2000, h: 1500 },
+      { file: "location-margot-0274", name: "Margot", w: 1500, h: 2000 },
+      { file: "location-corinna-trienbacher-0238", name: "Corinna Trienbacher", w: 1500, h: 2000 },
+      { file: "location-cass-6217", name: "", w: 1309, h: 2000 },
+      { file: "location-corinna-9870", name: "Corinna", w: 1500, h: 2000 },
+      { file: "location-niczi-6455", name: "Niczi", w: 2000, h: 1500 },
+      { file: "location-sunny-mara-3", name: "Sunny Mara", w: 1562, h: 2000 },
+      { file: "location-sunny-mara-2", name: "Sunny Mara", w: 1500, h: 2000 },
+      { file: "location-taya-1", name: "Taya", w: 1500, h: 2000 },
     ]
   }
 };
