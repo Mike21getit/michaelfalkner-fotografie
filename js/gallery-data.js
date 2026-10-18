@@ -72,7 +72,7 @@ window.GALLERY = {
       { file: "nude-chiara-01", name: "Chiara", w: 1500, h: 2000 },
       { file: "nude-laura-01", name: "Laura", w: 1500, h: 2000 },
       { file: "nude-niczi-01", name: "Niczi", w: 1500, h: 2000 },
-      { file: "nude-dscf2044", name: "", w: 1500, h: 2000 },
+      { file: "nude-victoria-01", name: "Victoria", w: 1500, h: 2000 },
     ]
   },
   travel: {
