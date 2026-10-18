@@ -238,10 +238,16 @@ em { font-style: italic; }
   .hero-shade {
     background:
       linear-gradient(to left, rgba(11,11,12,.85) 0%, rgba(11,11,12,.45) 35%, rgba(11,11,12,0) 60%),
-      linear-gradient(to top, rgba(11,11,12,.9) 0%, rgba(11,11,12,0) 30%),
+      linear-gradient(to top, rgba(11,11,12,.9) 0%, rgba(11,11,12,0) 14%),
       linear-gradient(to bottom, rgba(11,11,12,.5) 0%, rgba(11,11,12,0) 20%);
   }
-  .hero-img { object-position: 30% 32%; }
+  /* Desktop: Bild kleiner und links, damit das ganze Gesicht inkl. Mund sichtbar bleibt */
+  .hero-img {
+    left: 6%; right: auto; width: min(60%, 82svh);
+    object-position: 50% 30%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 72%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 72%, transparent 100%);
+  }
 }
 .scroll-cue {
   position: absolute; z-index: 1; right: var(--pad); bottom: 2.5rem;
