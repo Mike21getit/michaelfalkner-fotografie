@@ -5,7 +5,8 @@ Statische Portfolio-Website (HTML/CSS/JS, ohne Framework, ohne externe Ressource
 Live: https://mike21getit.github.io/michaelfalkner-fotografie/
 
 ## Struktur
-- `index.html` – alle Inhalte (Hero, Teaser, Über mich, Portfolio, Kontakt, Impressum, Datenschutz)
+- `index.html` – alle Inhalte (Hero, Teaser, Über mich, Portfolio, Kontakt, Impressum, Datenschutz), Deutsch (Standard)
+- `en/index.html` – englische Fassung (gleiche Struktur, Pfade mit `../`, `<html data-base="../">`). Textänderungen bitte in beiden Dateien pflegen; Umschalter DE/EN im Header, hreflang-Links im `<head>` und in `sitemap.xml`.
 - `css/style.css` – Styles
 - `js/gallery-data.js` – **Bilderlisten pro Kategorie** (hier neue Bilder eintragen)
 - `js/main.js` – Masonry-Galerie, Lightbox, Altersabfrage, Menü

@@ -6,16 +6,27 @@
   var SITE = 'Michael Falkner Fotografie';
   var GATE_KEY = 'mf-age-confirmed';
   var root = document.documentElement;
+  // Sprache der aktuellen Seite (<html lang="de|en">) und relativer Pfad zum Seiten-Root
+  var LANG = /^en/i.test(root.lang) ? 'en' : 'de';
+  var BASE = root.getAttribute('data-base') || '';
+  var T = {
+    de: { of: ' von ', enlarge: ' – vergrößern', fallback: 'Fotografie', menuOpen: 'Menü öffnen', menuClose: 'Menü schließen' },
+    en: { of: ' of ', enlarge: ' – enlarge', fallback: 'Photography', menuOpen: 'Open menu', menuClose: 'Close menu' }
+  }[LANG];
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
   function images(cat) { return (GALLERY[cat] && GALLERY[cat].images) || []; }
-  function full(img) { return 'img/full/' + img.file + '.webp'; }
-  function thumb(img) { return 'img/thumb/' + img.file + '.webp'; }
+  function full(img) { return BASE + 'img/full/' + img.file + '.webp'; }
+  function thumb(img) { return BASE + 'img/thumb/' + img.file + '.webp'; }
   function altText(cat, img) {
+    var g = GALLERY[cat] || {};
+    if (LANG === 'en') {
+      if (img.altEn) return img.altEn;
+      return (g.altPrefixEn || T.fallback) + (img.name ? T.of + img.name : '') + ' – ' + SITE;
+    }
     if (img.alt) return img.alt;
-    var prefix = (GALLERY[cat] && GALLERY[cat].altPrefix) || 'Fotografie';
-    return prefix + (img.name ? ' von ' + img.name : '') + ' – ' + SITE;
+    return (g.altPrefix || T.fallback) + (img.name ? T.of + img.name : '') + ' – ' + SITE;
   }
   function srcset(img) {
     var long = Math.max(img.w, img.h);
@@ -77,7 +88,7 @@
       a.className = 'g-item';
       a.href = full(img);
       a.setAttribute('data-index', i);
-      a.setAttribute('aria-label', altText(cat, img) + ' – vergrößern');
+      a.setAttribute('aria-label', altText(cat, img) + T.enlarge);
       var im = document.createElement('img');
       im.width = img.w; im.height = img.h;
       im.loading = 'lazy'; im.decoding = 'async';
@@ -171,7 +182,7 @@
     root.classList.toggle('menu-open', open);
     document.body.classList.toggle('no-scroll', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    toggle.setAttribute('aria-label', open ? T.menuClose : T.menuOpen);
   }
   toggle.addEventListener('click', function () { setMenu(!root.classList.contains('menu-open')); });
   $$('a', menu).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
@@ -189,10 +200,24 @@
         navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['home', 'portfolio', 'ueber-mich', 'kontakt', 'impressum', 'datenschutz'].forEach(function (id) {
+    ['home', 'portfolio', 'ueber-mich', 'kontakt', 'impressum', 'datenschutz', 'about', 'contact', 'legal-notice', 'privacy'].forEach(function (id) {
       var s = document.getElementById(id); if (s) spy.observe(s);
     });
   }
+
+  /* ---------- Sprachumschalter: aktuellen Abschnitt mitnehmen ---------- */
+  var HASH_MAP = {
+    'ueber-mich': 'about', 'kontakt': 'contact', 'impressum': 'legal-notice', 'datenschutz': 'privacy',
+    'about': 'ueber-mich', 'contact': 'kontakt', 'legal-notice': 'impressum', 'privacy': 'datenschutz'
+  };
+  $$('.lang-switch a[hreflang]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var h = (location.hash || '').slice(1);
+      if (!h) return;
+      var target = HASH_MAP[h] || h;
+      a.href = a.href.split('#')[0] + '#' + target;
+    });
+  });
 
   /* ---------- Scroll-Reveal ---------- */
   var reveals = $$('.reveal');

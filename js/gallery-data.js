@@ -8,6 +8,7 @@
  *          -> erzeugen mit: python3 tools/optimize.py <kategorie> <bild.jpg> ...
  *   name : Name des Models (für den Alt-Text), darf leer sein ""
  *   alt  : (optional) eigener Alt-Text statt des automatisch erzeugten
+ *   altEn: (optional) englischer Alt-Text für /en/ (sonst altPrefixEn + Name)
  *   w, h : Pixelmaße der full-Version (verhindert Layout-Sprünge)
  *
  * Das erste Bild einer Kategorie ist automatisch das Teaser-Bild.
@@ -21,6 +22,7 @@ window.GALLERY = {
   portrait: {
     title: "Portrait",
     altPrefix: "Porträt",
+    altPrefixEn: "Portrait",
     images: [
       { file: "portrait-claudio-02", name: "Claudio", w: 2000, h: 1500 },
       { file: "portrait-clara-rene-02", name: "Clara Rene", w: 1599, h: 2000 },
@@ -72,17 +74,18 @@ window.GALLERY = {
   nude: {
     title: "Nude",
     altPrefix: "Künstlerische Aktfotografie",
+    altPrefixEn: "Fine art nude photography",
     gated: true, // Altersabfrage (ab 18) vor dem Anzeigen
     images: [
       { file: "nude-tina-03", name: "Tina", w: 1500, h: 2000 },
       { file: "nude-petra-02", name: "Petra", w: 2000, h: 1500 },
       { file: "nude-olga-06", name: "Olga", w: 1500, h: 2000 },
       { file: "nude-ness-03", name: "Ness", w: 2000, h: 1500 },
-      { file: "nude-loft-studio-cologne-01", name: "", alt: "Künstlerische Aktfotografie im Loft Studio Köln – Michael Falkner Fotografie", w: 2000, h: 1333 },
+      { file: "nude-loft-studio-cologne-01", name: "", alt: "Künstlerische Aktfotografie im Loft Studio Köln – Michael Falkner Fotografie", altEn: "Fine art nude photography at Loft Studio Cologne – Michael Falkner Fotografie", w: 2000, h: 1333 },
       { file: "nude-jasmin-rituper-01", name: "Jasmin Rituper", w: 1333, h: 2000 },
       { file: "nude-guilia-02", name: "Guilia", w: 1500, h: 2000 },
       { file: "nude-cardii-02", name: "Cardii", w: 1333, h: 2000 },
-      { file: "nude-loft-studio-cologne-02", name: "", alt: "Künstlerische Aktfotografie im Loft Studio Köln – Michael Falkner Fotografie", w: 1333, h: 2000 },
+      { file: "nude-loft-studio-cologne-02", name: "", alt: "Künstlerische Aktfotografie im Loft Studio Köln – Michael Falkner Fotografie", altEn: "Fine art nude photography at Loft Studio Cologne – Michael Falkner Fotografie", w: 1333, h: 2000 },
       { file: "nude-aneta-02", name: "Aneta", w: 1500, h: 2000 },
       { file: "nude-cardii-01", name: "Cardii", w: 2000, h: 1125 },
       { file: "nude-0c2a7184", name: "", w: 1334, h: 2000 },
@@ -114,6 +117,7 @@ window.GALLERY = {
   travel: {
     title: "Travel",
     altPrefix: "Reisefotografie",
+    altPrefixEn: "Travel photography",
     images: [
       // { file: "travel-beispiel-01", name: "", w: 2000, h: 1333 },
     ]
@@ -121,6 +125,7 @@ window.GALLERY = {
   location: {
     title: "On Location",
     altPrefix: "Location-Shooting",
+    altPrefixEn: "On-location shoot",
     images: [
       { file: "location-0c2a7439", name: "", w: 2000, h: 1334 },
       { file: "location-0c2a7509", name: "", w: 1334, h: 2000 },
