@@ -7,11 +7,12 @@
   var GATE_KEY = 'mf-age-confirmed';
   var root = document.documentElement;
   // Sprache der aktuellen Seite (<html lang="de|en">) und relativer Pfad zum Seiten-Root
-  var LANG = /^en/i.test(root.lang) ? 'en' : 'de';
+  var LANG = /^en/i.test(root.lang) ? 'en' : (/^es/i.test(root.lang) ? 'es' : 'de');
   var BASE = root.getAttribute('data-base') || '';
   var T = {
     de: { of: ' von ', enlarge: ' – vergrößern', fallback: 'Fotografie', menuOpen: 'Menü öffnen', menuClose: 'Menü schließen' },
-    en: { of: ' of ', enlarge: ' – enlarge', fallback: 'Photography', menuOpen: 'Open menu', menuClose: 'Close menu' }
+    en: { of: ' of ', enlarge: ' – enlarge', fallback: 'Photography', menuOpen: 'Open menu', menuClose: 'Close menu' },
+    es: { of: ' de ', enlarge: ' – ampliar', fallback: 'Fotografía', menuOpen: 'Abrir menú', menuClose: 'Cerrar menú' }
   }[LANG];
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
@@ -24,6 +25,10 @@
     if (LANG === 'en') {
       if (img.altEn) return img.altEn;
       return (g.altPrefixEn || T.fallback) + (img.name ? T.of + img.name : '') + ' – ' + SITE;
+    }
+    if (LANG === 'es') {
+      if (img.altEs) return img.altEs;
+      return (g.altPrefixEs || T.fallback) + (img.name ? T.of + img.name : '') + ' – ' + SITE;
     }
     if (img.alt) return img.alt;
     return (g.altPrefix || T.fallback) + (img.name ? T.of + img.name : '') + ' – ' + SITE;
@@ -200,21 +205,27 @@
         navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['home', 'portfolio', 'ueber-mich', 'kontakt', 'impressum', 'datenschutz', 'about', 'contact', 'legal-notice', 'privacy'].forEach(function (id) {
+    ['home', 'portfolio', 'ueber-mich', 'kontakt', 'impressum', 'datenschutz', 'about', 'contact', 'legal-notice', 'privacy', 'sobre-mi', 'contacto', 'aviso-legal', 'privacidad'].forEach(function (id) {
       var s = document.getElementById(id); if (s) spy.observe(s);
     });
   }
 
   /* ---------- Sprachumschalter: aktuellen Abschnitt mitnehmen ---------- */
-  var HASH_MAP = {
-    'ueber-mich': 'about', 'kontakt': 'contact', 'impressum': 'legal-notice', 'datenschutz': 'privacy',
-    'about': 'ueber-mich', 'contact': 'kontakt', 'legal-notice': 'impressum', 'privacy': 'datenschutz'
-  };
+  // Gleiche Abschnitte in allen Sprachen (Anker, die sich unterscheiden)
+  var SECTIONS = [
+    { de: 'ueber-mich', en: 'about', es: 'sobre-mi' },
+    { de: 'kontakt', en: 'contact', es: 'contacto' },
+    { de: 'impressum', en: 'legal-notice', es: 'aviso-legal' },
+    { de: 'datenschutz', en: 'privacy', es: 'privacidad' }
+  ];
   $$('.lang-switch a[hreflang]').forEach(function (a) {
     a.addEventListener('click', function () {
       var h = (location.hash || '').slice(1);
       if (!h) return;
-      var target = HASH_MAP[h] || h;
+      var to = a.getAttribute('hreflang'), target = h;
+      SECTIONS.forEach(function (sec) {
+        if (sec.de === h || sec.en === h || sec.es === h) target = sec[to];
+      });
       a.href = a.href.split('#')[0] + '#' + target;
     });
   });

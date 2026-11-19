@@ -6,7 +6,7 @@ Live: https://mike21getit.github.io/michaelfalkner-fotografie/
 
 ## Struktur
 - `index.html` – alle Inhalte (Hero, Teaser, Über mich, Portfolio, Kontakt, Impressum, Datenschutz), Deutsch (Standard)
-- `en/index.html` – englische Fassung (gleiche Struktur, Pfade mit `../`, `<html data-base="../">`). Textänderungen bitte in beiden Dateien pflegen; Umschalter DE/EN im Header, hreflang-Links im `<head>` und in `sitemap.xml`.
+- `en/index.html` – englische Fassung, `es/index.html` – spanische Fassung (gleiche Struktur, Pfade mit `../`, `<html data-base="../">`). Textänderungen bitte in allen drei Dateien pflegen; Umschalter DE/EN/ES im Header, hreflang-Links (de/en/es/x-default) im `<head>` und in `sitemap.xml`. Abweichende Anker (z. B. `#kontakt` / `#contact` / `#contacto`) stehen in `SECTIONS` in `js/main.js`; Alt-Texte über `altPrefixEn`/`altPrefixEs` bzw. `altEn`/`altEs` in `js/gallery-data.js`.
 - `css/style.css` – Styles
 - `js/gallery-data.js` – **Bilderlisten pro Kategorie** (hier neue Bilder eintragen)
 - `js/main.js` – Masonry-Galerie, Lightbox, Altersabfrage, Menü

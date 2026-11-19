@@ -187,6 +187,17 @@ em { font-style: italic; }
 
 @media (max-width: 860px) {
   .lang-switch { margin-left: auto; margin-right: .5rem; order: 2; }
+}
+@media (max-width: 860px) {
+  .lang-switch { gap: .1rem; letter-spacing: .12em; }
+  .lang-switch a { min-width: 2.1rem; padding: 0 .3rem; }
+  .lang-sep { display: none; }
+}
+@media (max-width: 360px) {
+  .brand-name { font-size: 1.25rem; }
+  .lang-switch a { min-width: 1.9rem; padding: 0 .2rem; font-size: .66rem; }
+}
+@media (max-width: 860px) {
   .menu-toggle { order: 3; }
   .menu-toggle { display: block; }
   .nav-menu {

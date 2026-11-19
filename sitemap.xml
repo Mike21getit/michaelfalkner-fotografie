@@ -4,12 +4,21 @@
     <loc>https://michael-falkner.de/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://michael-falkner.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://michael-falkner.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://michael-falkner.de/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://michael-falkner.de/"/>
   </url>
   <url>
     <loc>https://michael-falkner.de/en/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://michael-falkner.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://michael-falkner.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://michael-falkner.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://michael-falkner.de/"/>
+  </url>
+  <url>
+    <loc>https://michael-falkner.de/es/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://michael-falkner.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://michael-falkner.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://michael-falkner.de/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://michael-falkner.de/"/>
   </url>
 </urlset>
