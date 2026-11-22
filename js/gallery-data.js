@@ -26,8 +26,8 @@ window.GALLERY = {
     altPrefixEn: "Portrait",
     altPrefixEs: "Retrato",
     images: [
-      { file: "portrait-guilia-2026-1-big", name: "Guilia", w: 1334, h: 2000 },
       { file: "portrait-claudio-02", name: "Claudio", w: 2000, h: 1500 },
+      { file: "portrait-guilia-2026-1-big", name: "Guilia", w: 1334, h: 2000 },
       { file: "portrait-clara-rene-02", name: "Clara Rene", w: 1599, h: 2000 },
       { file: "portrait-img-01", name: "", w: 1334, h: 2000 },
       { file: "portrait-jorina-01", name: "Jorina", w: 1500, h: 2000 },
