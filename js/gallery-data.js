@@ -84,6 +84,7 @@ window.GALLERY = {
     gated: true, // Altersabfrage (ab 18) vor dem Anzeigen
     images: [
       { file: "nude-tina-03", name: "Tina", w: 1500, h: 2000 },
+      { file: "nude-dscf3011-1-big", name: "", w: 1500, h: 2000 },
       { file: "nude-petra-02", name: "Petra", w: 2000, h: 1500 },
       { file: "nude-olga-06", name: "Olga", w: 1500, h: 2000 },
       { file: "nude-ness-03", name: "Ness", w: 2000, h: 1500 },
