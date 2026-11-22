@@ -307,6 +307,17 @@ em { font-style: italic; }
 .teaser:hover .teaser-img { transform: scale(1); }
 /* Nude-Teaser: Bildausschnitt weiter oben ansetzen, damit das Gesicht sichtbar ist */
 .teaser[data-category="nude"] .teaser-img { object-position: 50% 8%; }
+/* On Location: komplettes Teaser-Bild unbeschnitten zeigen (kein Cover-Zuschnitt) */
+.teaser[data-category="location"] .teaser-media { background: var(--bg); }
+.teaser[data-category="location"] .teaser-img {
+  object-fit: contain;
+  object-position: 50% 50%;
+  transform: none;
+}
+.teaser[data-category="location"]:hover .teaser-img { transform: none; }
+.teaser[data-category="location"].teaser--right .teaser-media::after {
+  background: linear-gradient(270deg, rgba(11,11,12,.92) 0%, rgba(11,11,12,.4) 20%, rgba(11,11,12,.06) 38%, rgba(11,11,12,0) 52%);
+}
 .teaser-media::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(11,11,12,.88) 0%, rgba(11,11,12,.5) 40%, rgba(11,11,12,.05) 75%);
@@ -326,6 +337,10 @@ em { font-style: italic; }
   .teaser { align-items: flex-end; min-height: 80svh; }
   .teaser-media::after, .teaser--right .teaser-media::after {
     background: linear-gradient(0deg, rgba(11,11,12,.95) 0%, rgba(11,11,12,.55) 38%, rgba(11,11,12,.05) 70%);
+  }
+  .teaser[data-category="location"] .teaser-media::after,
+  .teaser[data-category="location"].teaser--right .teaser-media::after {
+    background: linear-gradient(0deg, rgba(11,11,12,.95) 0%, rgba(11,11,12,.4) 22%, rgba(11,11,12,0) 42%);
   }
   .teaser-content { padding: 4rem var(--pad) 3.5rem; }
 }
