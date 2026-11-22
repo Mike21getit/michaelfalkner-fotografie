@@ -119,6 +119,7 @@ window.GALLERY = {
       {"file": "nude-dscf0503-1-big", "name": "", "w": 2000, "h": 1500},
       {"file": "nude-dscf8610-1-big", "name": "", "w": 2000, "h": 1500},
       {"file": "nude-0c2a7398-big", "name": "", "w": 2000, "h": 1334},
+      { file: "nude-anettakeys-1-big", name: "Aneta", w: 1500, h: 2000 },
     ]
   },
   travel: {
