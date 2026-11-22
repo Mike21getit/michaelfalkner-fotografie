@@ -26,6 +26,7 @@ window.GALLERY = {
     altPrefixEn: "Portrait",
     altPrefixEs: "Retrato",
     images: [
+      { file: "portrait-guilia-2026-1-big", name: "Guilia", w: 1334, h: 2000 },
       { file: "portrait-claudio-02", name: "Claudio", w: 2000, h: 1500 },
       { file: "portrait-clara-rene-02", name: "Clara Rene", w: 1599, h: 2000 },
       { file: "portrait-img-01", name: "", w: 1334, h: 2000 },
@@ -132,6 +133,7 @@ window.GALLERY = {
     altPrefixEn: "On-location shoot",
     altPrefixEs: "Sesión en exteriores",
     images: [
+      { file: "location-guilia-2026-2-big", name: "Guilia", w: 1334, h: 2000 },
       { file: "location-0c2a7439", name: "", w: 2000, h: 1334 },
       { file: "location-0c2a7509", name: "", w: 1334, h: 2000 },
       { file: "location-la-petite-douce-146", name: "", w: 1500, h: 2000 },
