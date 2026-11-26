@@ -74,6 +74,7 @@ window.GALLERY = {
       {"file": "portrait-2020-01-18-loft-14c-179-1-web-col", "name": "", "w": 1500, "h": 2000},
       {"file": "portrait-2019-10-12-loft-14c-0189-1-big", "name": "", "w": 1500, "h": 2000},
       {"file": "portrait-2018-08-22-kukie-012-1-web-col", "name": "", "w": 1500, "h": 2000},
+      { file: "portrait-2019-08-18-clara-rene-162-1-big", name: "Clara Rene", w: 2000, h: 1500 },
     ]
   },
   nude: {
